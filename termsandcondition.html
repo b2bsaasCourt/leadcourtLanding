@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>LeadCourt - Next-Gen Lead Intelligence Platform Terms and Condition</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js and plugins -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind Config -->
+    <script src="./scripts/tailwind.js"></script>
+
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script> -->
+  </head>
+  <body class="bg-gray-50">
+    
+
+
+
+
+    <!-- Sticky Header -->
+    <header
+      class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100"
+      x-data="{ isOpen: false }"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          
+            <!-- Logo -->
+            <a href="./">
+              <div class="flex-shrink-0">
+               <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+                <!-- <span class="text-2xl font-bold gradient-text">LeadCourt</span> -->
+              </div>
+  
+            </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500"
+              >Features</a
+            >
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500"
+              >How it Works</a
+            >
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500"
+              >Pricing</a
+            >
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500"
+              >Integrations</a
+            >
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500"
+              >Our Data</a
+            >
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500"
+              >Contact Us</a
+            >
+            <a
+            href="http://app.leadcourt.com/"
+              class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              @click="isOpen = !isOpen"
+              class="text-gray-600 w-10 h-10 relative focus:outline-none"
+            >
+              <div
+                class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'opacity-0': isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+          x-show="isOpen"
+          @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4"
+        >
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="./#features"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Features</a
+              >
+              <a
+                href="./#how-it-works"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >How it Works</a
+              >
+              <a
+                href="./#pricing"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="./#integrations"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Integrations</a
+              >
+              <a
+            href="http://app.leadcourt.com/"
+              
+                class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    
+    
+    <div
+      class="max-w-[95%] lg:max-w-[80%] mx-auto mb-5 mt-[10vh] lg:!mt-[15vh] px-4 py-8 bg-white shadow-md rounded-lg"
+    >
+      <!-- Terms & Conditions Section -->
+      <div class="mb-12">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">
+          Terms & Conditions for Leadcourt
+        </h1>
+        <p class="text-sm italic text-gray-600 mb-6">
+          Effective Date: 27/04/25
+        </p>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            1. Introduction
+          </h2>
+          <p class="text-gray-700 mb-4">These Terms and Conditions (the “Terms”) govern the use of the website www.leadcourt.com (the “Site”) and all services provided by LeadCourt, a sole proprietorship operated by Adhiraj Kashyap (“LeadCourt”, “we”, “our”, or “us”). 
+            <br />
+            By accessing or using the Site and Services, you agree to comply with these Terms and all applicable laws and regulations.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            2. Services Provided
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Leadcourt offers a platform that provides access to business
+            intelligence, data, and contact information about businesses and
+            professionals, compiled from multiple sources (the "Services"). The
+            platform is made available to users on a subscription basis and can
+            be accessed through the Site, API, browser extensions, and
+            downloadable software.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            3. Account Creation and Responsibilities
+          </h2>
+          <p class="text-gray-700 mb-4">
+            To access the Services, you must create an account with accurate and
+            complete information. You are responsible for maintaining the
+            confidentiality of your account and Login Credentials and for all
+            activities that occur under your account. You agree to notify us
+            immediately if you become aware of any unauthorized use of your
+            account.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            4. Subscription Plans and Payments
+          </h2>
+          <p class="text-gray-700 mb-2">
+            Leadcourt offers various subscription plans (e.g., monthly, annual)
+            with different levels of access to data. Subscription fees are due
+            in advance and must be paid by credit card or other accepted
+            methods. All fees are non-refundable, and Leadcourt reserves the
+            right to change the fees for its services at any time.
+          </p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <span class="font-medium">Renewal:</span> Subscriptions will
+              automatically renew at the end of each term unless canceled by
+              you. If payment is unsuccessful, Leadcourt may suspend or
+              terminate your access to the Services.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            5. Use Restrictions
+          </h2>
+          <p class="text-gray-700 mb-2">You agree not to:</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>Use the Services for any unlawful or unauthorized purpose.</li>
+            <li>
+              Copy, modify, or redistribute the data provided by Leadcourt.
+            </li>
+            <li>Share your Login Credentials with unauthorized users.</li>
+            <li>
+              Attempt to reverse engineer, hack, or decompile the Services.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            6. Termination
+          </h2>
+          <p class="text-gray-700 mb-4">
+            You may terminate your subscription at any time by following the
+            cancellation process on your account settings. Upon termination, you
+            must immediately stop using the Services and delete any data
+            obtained through Leadcourt. Leadcourt may terminate these Terms if
+            you breach any provision or fail to pay fees when due.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">7. Privacy</h2>
+          <p class="text-gray-700 mb-4">
+            Your use of the Services is governed by our Privacy Policy, which
+            outlines how we collect, use, and protect your personal data. You
+            agree to comply with all data protection laws when using the
+            Services.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            8. Support and Maintenance
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Leadcourt provides customer support for technical issues and
+            inquiries via email. We strive to maintain the availability of the
+            platform but make no guarantees regarding uninterrupted service. We
+            reserve the right to perform maintenance and updates to improve the
+            platform.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            9. Intellectual Property
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Leadcourt owns all intellectual property rights to the Services,
+            including the data, platform, and any associated software. You are
+            granted a limited, non-exclusive, non-transferable license to use
+            the Services for the duration of your subscription.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            10. Disclaimers and Limitations of Liability
+          </h2>
+          <p class="text-gray-700 mb-4">
+            The Services are provided "as is" without any warranties, express or
+            implied. Leadcourt does not guarantee that the Services will be
+            error-free or meet your specific requirements. In no event shall
+            Leadcourt be liable for any indirect, special, or consequential
+            damages arising from your use of the Services.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            11. Indemnification
+          </h2>
+          <p class="text-gray-700 mb-4">
+            You agree to indemnify and hold Leadcourt harmless from any claims,
+            damages, or expenses arising from your use of the Services,
+            violation of these Terms, or infringement of any third-party rights.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            12. Governing Law and Dispute Resolution
+          </h2>
+          <p class="text-gray-700 mb-4">
+            These Terms will be governed by the laws of India. Any disputes
+            arising from these Terms will be resolved through arbitration, with
+            the venue set in New Delhi.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            13. Changes to These Terms
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Leadcourt reserves the right to modify these Terms at any time. We
+            will notify you of any material changes by posting a notice on the
+            Site. Continued use of the Services after any changes constitutes
+            your acceptance of the revised Terms.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            14. Contact Us
+          </h2>
+          <p class="text-gray-700 mb-2">
+            For questions or concerns about these Terms, please contact us at:
+          </p>
+          <p class="text-gray-700 ml-5">Email: help@leadcourt.com</p>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">LeadCourt</h3>
+            <p class="text-gray-600">
+              Next-gen lead intelligence platform for modern sales teams.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>
+                <a href="#features" class="hover:text-primary-500">Features</a>
+              </li>
+              <li>
+                <a href="#pricing" class="hover:text-primary-500">Pricing</a>
+              </li>
+              <li>
+                <a href="#integrations" class="hover:text-primary-500"
+                  >Integrations</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:text-primary-500">About</a></li>
+              <li><a href="https://blog.leadcourt.com" class="hover:text-primary-500">Blog</a></li>
+              <li><a href="#" class="hover:text-primary-500">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="./privacyandpolicy.html" class="hover:text-primary-500">Privacy and Policy</a></li>
+              <li><a href="./termsandcondition.html" class="hover:text-primary-500">Terms and Conditions</a></li>
+              <li><a href="./refundpolicy.html" class="hover:text-primary-500">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600"
+        >
+          <p>&copy; 2024 LeadCourt. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>

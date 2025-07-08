@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact Us - leadcourt</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js and plugins -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind Config -->
+    <script src="./scripts/tailwind.js"></script>
+
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script> -->
+ 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #fefcfb 0%, #fef7f0 50%, #fef3ec 100%);
+            color: #374151;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #fed7aa, #fdba74);
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #fdba74, #fb923c);
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #fed7aa, #fbbf24);
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(90deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+ 
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .contact-form-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(251, 146, 60, 0.1);
+            position: relative;
+        }
+
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #f97316, #ea580c);
+            border-radius: 2px;
+        }
+
+        .section-description {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .google-form {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(251, 146, 60, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+            transition: transform 0.2s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(3px);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(249, 115, 22, 0.3);
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 6px;
+        }
+
+        .contact-details p {
+            color: #6b7280;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-details a {
+            color: #f97316;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .contact-details a:hover {
+            color: #ea580c;
+            text-decoration: underline;
+        }
+
+        .response-time-card {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .response-time-card h3 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .response-time-card p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .stats-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(251, 146, 60, 0.1);
+            margin-bottom: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            transition: transform 0.2s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item h4 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #f97316;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #6b7280;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-note {
+            margin-top: 16px;
+            padding: 16px;
+            background: rgba(254, 243, 236, 0.8);
+            border-radius: 8px;
+            border-left: 3px solid #f97316;
+            font-size: 14px;
+            color: #6b7280;
+            border: 1px solid rgba(249, 115, 22, 0.15);
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(251, 146, 60, 0.1);
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-form-section {
+                padding: 30px;
+            }
+            
+            .stats-section {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 16px;
+            }
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .google-form {
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+
+    <!-- Sticky Header -->
+    <header
+      class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100"
+      x-data="{ isOpen: false }"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          
+            <!-- Logo -->
+            <a href="./">
+              <div class="flex-shrink-0">
+               <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+                <!-- <span class="text-2xl font-bold gradient-text">LeadCourt</span> -->
+              </div>
+  
+            </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500"
+              >Features</a
+            >
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500"
+              >How it Works</a
+            >
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500"
+              >Pricing</a
+            >
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500"
+              >Integrations</a
+            >
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500"
+              >Our Data</a
+            >
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500"
+              >Contact Us</a
+            >
+            <a
+            href="http://app.leadcourt.com/"
+              class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              @click="isOpen = !isOpen"
+              class="text-gray-600 w-10 h-10 relative focus:outline-none"
+            >
+              <div
+                class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'opacity-0': isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+          x-show="isOpen"
+          @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4"
+        >
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="./#features"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Features</a
+              >
+              <a
+                href="./#how-it-works"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >How it Works</a
+              >
+              <a
+                href="./#pricing"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="./#integrations"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Integrations</a
+              >
+              <a
+            href="http://app.leadcourt.com/"
+              
+                class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    
+    <main class="mt-[30vh] ">
+        <div class="container">
+            <section class="hero-section">
+                <h1 class="hero-title">Get in Touch</h1>
+                <p class="hero-subtitle">Ready to transform your lead generation? Our expert team is here to help you unlock your business potential.</p>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h4>&lt;24h</h4>
+                        <p>Average Response Time</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>95%+</h4>
+                        <p>Customer Satisfaction</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>24/7</h4>
+                        <p>Live Support Available</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-grid">
+                <div class="contact-form-section">
+                    <h2 class="section-title">Send us a Message</h2>
+                    <p class="section-description">Fill out the form below and we'll get back to you as soon as possible with personalized solutions for your business.</p>
+                    
+                    <iframe 
+                        class="google-form"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSf_PLACEHOLDER_FORM_ID/viewform?embedded=true" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0">
+                        Loading...
+                    </iframe>
+                    
+                    <div class="form-note">
+                        <strong>Setup Note:</strong> Replace the form URL above with your actual Google Form embed link to activate the contact form.
+                    </div>
+                </div>
+
+                <div class="contact-info-section">
+                    <div class="contact-card">
+                        <h2 class="section-title">Contact Information</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h3>Email Support</h3>
+                                <p><a href="mailto:support@leadcourt.com">support@leadcourt.com</a></p>
+                                <p>For technical support and general inquiries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <h3>Sales Inquiries</h3>
+                                <p><a href="mailto:business@leadcourt.com">business@leadcourt.com</a></p>
+                                <p>Ready to boost your lead generation?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-details">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                                <p>Weekend support for urgent matters</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card response-time-card">
+                        <h3>Quick Response Promise</h3>
+                        <p>We respond to all inquiries within 24 hours during business days. For urgent matters, email support@leadcourt.com for faster assistance.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">LeadCourt</h3>
+              <p class="text-gray-600">
+                Next-gen lead intelligence platform for modern sales teams.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Product</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li>
+                  <a href="#features" class="hover:text-primary-500">Features</a>
+                </li>
+                <li>
+                  <a href="#pricing" class="hover:text-primary-500">Pricing</a>
+                </li>
+                <li>
+                  <a href="#integrations" class="hover:text-primary-500"
+                    >Integrations</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Company</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li><a href="#" class="hover:text-primary-500">About</a></li>
+                <li><a href="#" class="hover:text-primary-500">Blog</a></li>
+                <li><a href="#" class="hover:text-primary-500">Careers</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Legal</h3>
+              <ul class="space-y-2 text-gray-600">
+                <li><a href="./privacyandpolicy.html" class="hover:text-primary-500">Privacy and Policy</a></li>
+                <li><a href="./termsandcondition.html" class="hover:text-primary-500">Terms and Conditions</a></li>
+                <li><a href="./refundpolicy.html" class="hover:text-primary-500">Refund Policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600"
+          >
+            <p>&copy; 2024 LeadCourt. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+  
+</body>
+</html>

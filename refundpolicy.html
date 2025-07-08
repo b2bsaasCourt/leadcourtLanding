@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadCourt Refund & Credit Policy</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js and plugins -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind Config -->
+    <script src="./scripts/tailwind.js"></script>
+
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+  </head>
+  <body class="bg-gray-50">
+
+
+    
+    <!-- Sticky Header 
+    
+    <header class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100" x-data="{ isOpen: false }">
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          <a href="./">
+            <div class="flex-shrink-0">
+              <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+            </div>
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500">Features</a>
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500">How it Works</a>
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500">Pricing</a>
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500">Integrations</a>
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500">Our Data</a>
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500">Contact Us</a>
+            <a href="http://app.leadcourt.com/" class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105">Start Free</a>
+          </div>
+
+          <div class="md:hidden">
+            <button @click="isOpen = !isOpen" class="text-gray-600 w-10 h-10 relative focus:outline-none">
+              <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <span class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out" :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"></span>
+                <span class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out" :class="{'opacity-0': isOpen }"></span>
+                <span class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out" :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg" x-show="isOpen" @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4">
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a href="./#features" class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors">Features</a>
+              <a href="./#how-it-works" class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors">How it Works</a>
+              <a href="./#pricing" class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors">Pricing</a>
+              <a href="./#integrations" class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors">Integrations</a>
+              <a href="http://app.leadcourt.com/" class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2">
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header> -->
+
+
+
+    <!-- Sticky Header -->
+    <header
+      class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100"
+      x-data="{ isOpen: false }"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          
+            <!-- Logo -->
+            <a href="./">
+              <div class="flex-shrink-0">
+               <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+                <!-- <span class="text-2xl font-bold gradient-text">LeadCourt</span> -->
+              </div>
+  
+            </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500"
+              >Features</a
+            >
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500"
+              >How it Works</a
+            >
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500"
+              >Pricing</a
+            >
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500"
+              >Integrations</a
+            >
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500"
+              >Our Data</a
+            >
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500"
+              >Contact Us</a
+            >
+            <a
+            href="http://app.leadcourt.com/"
+              class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              @click="isOpen = !isOpen"
+              class="text-gray-600 w-10 h-10 relative focus:outline-none"
+            >
+              <div
+                class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'opacity-0': isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+          x-show="isOpen"
+          @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4"
+        >
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="./#features"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Features</a
+              >
+              <a
+                href="./#how-it-works"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >How it Works</a
+              >
+              <a
+                href="./#pricing"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="./#integrations"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Integrations</a
+              >
+              <a
+            href="http://app.leadcourt.com/"
+              
+                class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    
+    
+
+    <!-- Main -->
+    <div class="max-w-[95%] lg:max-w-[80%] mx-auto mb-5 mt-[10vh] lg:!mt-[15vh] px-4 py-8 bg-white shadow-md rounded-lg">
+      <div class="mb-12">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">LeadCourt Refund & Credit Policy</h1>
+        <p class="text-gray-700 mb-6">
+          Welcome to LeadCourt — the fastest-growing lead intelligence platform with over 150 million decision-makers worldwide. Our mission is to give you unmatched access to business professionals through a simple, scalable credit system.
+        </p>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">How the Credit System Works</h2>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li><strong>1 Credit = Verified Email</strong></li>
+            <li><strong>2 Credits = Direct Phone Number</strong></li>
+            <li><strong>Credits are available through:</strong>
+              <ul class="list-decimal pl-5 mt-2 space-y-1">
+                <li>Monthly/Annual Subscriptions</li>
+                <li>Pay-As-You-Go Add-Ons</li>
+              </ul>
+            </li>
+          </ul>
+       
+          <p class="text-gray-700 mt-4">Unused credits expire after 12 months of inactivity on your account. We do not validate email or phone deliverability (i.e., whether a contact will respond), but we ensure the data exists and is pulled from credible sources.</p>
+        </div>
+<!-- base -->
+        <!-- REPLACED SECTION STARTS -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">Refund & Replacement Policy</h2>
+
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-gray-800 mb-2">Eligible Cases</h3>
+            <p class="text-gray-700 mb-2">You may request a replacement or refund for credits used only in the following cases:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>A technical issue on our side (e.g., data failed to load, duplicate credits deducted)</li>
+              <li>You were incorrectly charged for the same data more than once</li>
+              <li>You were charged but did not receive the corresponding data</li>
+            </ul>
+            <p class="text-gray-700 mt-2 font-medium">All refund or replacement requests must be submitted within 7 calendar days of the transaction or issue, along with supporting details.</p>
+          </div>
+
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-gray-800 mb-2">Not Eligible for Refunds</h3>
+            <p class="text-gray-700 mb-2">We do not offer refunds for:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>Credits used on leads that result in bounced emails or unreachable numbers</li>
+              <li>Purchased credits that remain unused after subscription cancellation</li>
+              <li>Performance-related outcomes (e.g., no replies, unsuccessful campaigns)</li>
+              <li>Subscription cycles that have already started</li>
+              <li>Pay-as-you-go credits (non-refundable)</li>
+            </ul>
+            <p class="text-gray-700 mt-2">Once contact data is accessed, it is considered delivered and credits are used.</p>
+          </div>
+
+          <div class="mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Subscription Cancellations</h2>
+            <p class="text-gray-700 mb-2">You can cancel your subscription anytime via your dashboard:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>Cancellation stops future billing</li>
+              <li>The current billing cycle is non-refundable</li>
+              <li>Unused credits will remain valid for 12 months from your last activity</li>
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Pay-As-You-Go Terms</h2>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>Pay-as-you-go credits are non-refundable</li>
+              <li>They can be combined with subscription credits</li>
+              <li>Valid for 12 months from purchase</li>
+              <li>Cannot be exchanged or transferred</li>
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Refund Processing Timeline</h2>
+            <p>If your refund request is approved:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>We process refunds within 5 business days</li>
+              <li>After processing, it may take an additional 3–7 business days for the refund to reflect in your original payment method (depending on your bank or payment provider)</li>
+              <li>Refunds are always issued to the original payment method only</li>
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h3 class="text-lg font-medium text-gray-800 mb-2">How to Request a Refund</h3>
+            <p class="text-gray-700 mb-2">Please email us at <a href="mailto:help@leadcourt.com" class="text-blue-600 hover:text-blue-800 underline">help@leadcourt.com</a> with:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>Your account email address</li>
+              <li>Credit or contact ID(s) in question</li>
+              <li>A description of the issue with any relevant screenshots or documentation</li>
+            </ul>
+            <p class="text-gray-700 mt-2 font-medium">We aim to review and resolve valid cases within 7 business days of submission.</p>
+          </div>
+
+          <div class="mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Anti-Fraud & Abuse</h2>
+            <p class="text-gray-700 mb-2">To prevent misuse:</p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+              <li>Refunds will be denied if an account is flagged for suspicious or abusive data usage</li>
+              <li>We reserve the right to decline refunds in cases of excessive redemption activity</li>
+            </ul>
+          </div>
+
+          <div class="mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 mb-2">Need Help?</h2>
+            <p class="text-gray-700 mb-2">We’re always here to assist you:</p>
+            <p class="text-gray-700 ml-5">
+              📩 <a href="mailto:help@leadcourt.com" class="text-blue-600 hover:text-blue-800 underline">help@leadcourt.com</a>
+            </p>
+          </div>
+        </div>
+        <!-- REPLACED SECTION ENDS -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">LeadCourt</h3>
+            <p class="text-gray-600">Next-gen lead intelligence platform for modern sales teams.</p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#features" class="hover:text-primary-500">Features</a></li>
+              <li><a href="#pricing" class="hover:text-primary-500">Pricing</a></li>
+              <li><a href="#integrations" class="hover:text-primary-500">Integrations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:text-primary-500">About</a></li>
+              <li><a href="https://blog.leadcourt.com" class="hover:text-primary-500">Blog</a></li>
+              <li><a href="#" class="hover:text-primary-500">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="./privacyandpolicy.html" class="hover:text-primary-500">Privacy and Policy</a></li>
+              <li><a href="./termsandcondition.html" class="hover:text-primary-500">Terms and Conditions</a></li>
+              <li><a href="./refundpolicy.html" class="hover:text-primary-500">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600">
+          <p>&copy; 2024 LeadCourt. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

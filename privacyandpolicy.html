@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LeadCourt - Next-Gen Lead Intelligence Platform Privacy Policy</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js and plugins -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Tailwind Config -->
+    <script src="./scripts/tailwind.js"></script>
+
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script> -->
+  </head>
+  <body class="bg-gray-50">
+    
+
+
+    <!-- Sticky Header -->
+    <header
+      class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100"
+      x-data="{ isOpen: false }"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          
+            <!-- Logo -->
+            <a href="./">
+              <div class="flex-shrink-0">
+               <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+                <!-- <span class="text-2xl font-bold gradient-text">LeadCourt</span> -->
+              </div>
+  
+            </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500"
+              >Features</a
+            >
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500"
+              >How it Works</a
+            >
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500"
+              >Pricing</a
+            >
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500"
+              >Integrations</a
+            >
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500"
+              >Our Data</a
+            >
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500"
+              >Contact Us</a
+            >
+            <a
+            href="http://app.leadcourt.com/"
+              class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              @click="isOpen = !isOpen"
+              class="text-gray-600 w-10 h-10 relative focus:outline-none"
+            >
+              <div
+                class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'opacity-0': isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+          x-show="isOpen"
+          @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4"
+        >
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="./#features"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Features</a
+              >
+              <a
+                href="./#how-it-works"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >How it Works</a
+              >
+              <a
+                href="./#pricing"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="./#integrations"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Integrations</a
+              >
+              <a
+            href="http://app.leadcourt.com/"
+              
+                class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    
+
+    <div
+      class="max-w-[95%] lg:max-w-[80%] mx-auto mb-5 mt-[10vh] lg:!mt-[15vh] px-4 py-8 bg-white shadow-md rounded-lg"
+    >
+      <div class="mb-12">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">
+          Privacy Policy for Leadcourt
+        </h1>
+        <p class="text-sm italic text-gray-600 mb-6">
+          Effective Date: 27/04/25
+        </p>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            1. Introduction
+          </h2>
+          <p class="text-gray-700 mb-4">
+              LeadCourt (“LeadCourt”, “we”, “our”, or “us”) is operated by Adhiraj Kashyap, a sole proprietor based in India, with a registered address at:
+              <br /><br />
+              B2-302, Housefed Complex, Rupnagar, Srimantapur, Guwahati,<br />
+              Kamrup Metropolitan, Assam – 781032, India.
+              <br /><br />
+              We respect your privacy and are committed to protecting the personal information we collect. This Privacy Policy explains how we collect, use, store, and disclose information when you visit our website www.leadcourt.com (“Site”) and use our services (the “Services”).
+              <br />
+              By using our Site and Services, you agree to the collection, use, and sharing of your information as described in this Privacy Policy.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            2. Information We Collect
+          </h2>
+          <p class="text-gray-700 mb-2">
+            We collect various types of information to provide, maintain, and
+            improve our Services:
+          </p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <span class="font-medium">Personal Information:</span> We may
+              collect personal details such as your name, business email
+              address, company information, and other contact information when
+              you register or interact with our Services.
+            </li>
+            <li>
+              <span class="font-medium">Business Information:</span> We collect
+              professional data about businesses and professionals including,
+              but not limited to, company names, positions, and contact details.
+            </li>
+            <li>
+              <span class="font-medium">Usage Data:</span> This includes
+              information automatically collected when you access our Site, such
+              as your IP address, browser type, pages visited, time spent, and
+              interaction with the Site.
+            </li>
+            <li>
+              <span class="font-medium"
+                >Cookies and Tracking Technologies:</span
+              >
+              We use cookies, web beacons, and similar technologies to enhance
+              your experience and gather information about how you use the Site.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            3. How We Use Your Data
+          </h2>
+          <p class="text-gray-700 mb-2">We use the data we collect to:</p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <span class="font-medium"
+                >Provide and maintain the Services:</span
+              >
+              Deliver the business intelligence, contacts, and other information
+              available on our platform.
+            </li>
+            <li>
+              <span class="font-medium">Improve the Site and Services:</span>
+              Continuously monitor and enhance the quality of our platform.
+            </li>
+            <li>
+              <span class="font-medium"
+                >Customer Support and Communication:</span
+              >
+              Respond to your queries, provide customer service, and send you
+              updates about our Services.
+            </li>
+            <li>
+              <span class="font-medium">Business and Marketing:</span> Send
+              promotional materials, newsletters, and other communications
+              related to our Services.
+            </li>
+            <li>
+              <span class="font-medium">Compliance and Legal Obligations:</span>
+              To comply with applicable laws, enforce our legal agreements, and
+              protect against fraud.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            4. How We Share Your Data
+          </h2>
+          <p class="text-gray-700 mb-2">
+            We may share your data with third parties under the following
+            circumstances:
+          </p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <span class="font-medium">Service Providers:</span> We share data
+              with third-party vendors who provide services to us, such as cloud
+              storage and marketing platforms.
+            </li>
+            <li>
+              <span class="font-medium">Legal Requirements:</span> If required
+              by law or in response to legal requests, we may share information
+              to comply with regulations, legal processes, or government
+              investigations.
+            </li>
+            <li>
+              <span class="font-medium">Business Transfers:</span> In the event
+              of a merger, acquisition, or asset sale, your personal data may be
+              transferred to the acquiring entity.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            5. Data Retention
+          </h2>
+          <p class="text-gray-700 mb-4">
+            We retain your personal and business data for as long as necessary
+            to fulfill the purposes outlined in this Privacy Policy, including
+            compliance with legal obligations, resolving disputes, and enforcing
+            agreements. After this period, we will delete or anonymize your
+            data.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            6. Data Security
+          </h2>
+          <p class="text-gray-700 mb-4">
+            We implement industry-standard security measures to protect your
+            data from unauthorized access, alteration, or destruction. However,
+            no method of transmission or electronic storage is 100% secure, and
+            we cannot guarantee absolute security.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            7. Your Data Rights
+          </h2>
+          <p class="text-gray-700 mb-2">
+            As a user of our Services, you have the following rights regarding
+            your personal data:
+          </p>
+          <ul class="list-disc pl-5 text-gray-700 space-y-2">
+            <li>
+              <span class="font-medium">Access:</span> You have the right to
+              request access to the personal information we hold about you.
+            </li>
+            <li>
+              <span class="font-medium">Correction:</span> You may request
+              corrections to any inaccurate or incomplete data.
+            </li>
+            <li>
+              <span class="font-medium">Deletion:</span> You may request the
+              deletion of your personal data, subject to certain conditions.
+            </li>
+            <li>
+              <span class="font-medium">Opt-Out:</span> You can unsubscribe from
+              marketing communications at any time by clicking the "unsubscribe"
+              link in our emails or contacting us directly.
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            8. Children's Privacy
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Our Services are not intended for individuals under the age of 18,
+            and we do not knowingly collect personal data from minors. If we
+            discover that a child under 18 has provided us with personal
+            information, we will take immediate steps to delete such data.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            9. International Data Transfers
+          </h2>
+          <p class="text-gray-700 mb-4">
+            Your data may be transferred and stored in countries other than your
+            country of residence, including in the United States. We ensure that
+            all transfers of personal data are carried out in accordance with
+            applicable laws and under contractual safeguards, including the use
+            of Standard Contractual Clauses where applicable.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            10. Changes to This Privacy Policy
+          </h2>
+          <p class="text-gray-700 mb-4">
+            We may update this Privacy Policy from time to time to reflect
+            changes in our practices or applicable laws. We will notify you of
+            significant changes via email or through a notice on the Site.
+            Please review this Privacy Policy periodically for updates.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">
+            11. Contact Us
+          </h2>
+          <p class="text-gray-700 mb-2">
+            If you have any questions or concerns about this Privacy Policy or
+            how we handle your data, please contact us:
+          </p>
+          <p class="text-gray-700 ml-5">Email: help@leadcourt.com</p>
+        </div>
+      </div>
+ 
+    </div>
+
+    
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">LeadCourt</h3>
+            <p class="text-gray-600">
+              Next-gen lead intelligence platform for modern sales teams.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>
+                <a href="#features" class="hover:text-primary-500">Features</a>
+              </li>
+              <li>
+                <a href="#pricing" class="hover:text-primary-500">Pricing</a>
+              </li>
+              <li>
+                <a href="#integrations" class="hover:text-primary-500"
+                  >Integrations</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:text-primary-500">About</a></li>
+              <li><a href="https://blog.leadcourt.com" class="hover:text-primary-500">Blog</a></li>
+              <li><a href="#" class="hover:text-primary-500">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="./privacyandpolicy.html" class="hover:text-primary-500">Privacy and Policy</a></li>
+              <li><a href="./termsandcondition.html" class="hover:text-primary-500">Terms and Conditions</a></li>
+              <li><a href="./refundpolicy.html" class="hover:text-primary-500">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600"
+        >
+          <p>&copy; 2024 LeadCourt. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="B2B Contact Database & Lead Intelligence Platform | LeadCourt">
+    <meta name="description" content="Access 140M+ Verified B2B business contacts, emails, phone numbers, and decision-maker profiles with LeadCourt.">
+    <title>LeadCourt - Next-Gen Lead Intelligence Platform</title>
+    <link rel="icon" type="image/svg+xml" href="./logo.png" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js and plugins -->
+    <script
+      defer
+      src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <!-- Tailwind Config -->
+    <script src="./scripts/tailwind.js"></script>
+
+    <link rel="stylesheet" href="./styles/globalStyles.css">
+  </head>
+
+
+    <!-- Sticky Header -->
+    <header
+      class="fixed w-full top-0 z-50 glass-effect border-b border-gray-100"
+      x-data="{ isOpen: false }"
+    >
+      <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center justify-between">
+          
+            <!-- Logo -->
+            <a href="./">
+              <div class="flex-shrink-0">
+               <img src="./logo.png" class="h-[50px] -mx-2 -mt-2" alt="">
+                <!-- <span class="text-2xl font-bold gradient-text">LeadCourt</span> -->
+              </div>
+  
+            </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="./#features" class="text-gray-600 hover:text-primary-500"
+              >Features</a
+            >
+            <a href="./#how-it-works" class="text-gray-600 hover:text-primary-500"
+              >How it Works</a
+            >
+            <a href="./#pricing" class="text-gray-600 hover:text-primary-500"
+              >Pricing</a
+            >
+            <a href="./#integrations" class="text-gray-600 hover:text-primary-500"
+              >Integrations</a
+            >
+            <a href="./data-collection.html" class="text-gray-600 hover:text-primary-500"
+              >Our Data</a
+            >
+            <a href="./contact.html" class="text-gray-600 hover:text-primary-500"
+              >Contact Us</a
+            >
+            <a
+            href="http://app.leadcourt.com/"
+              class="gradient-bg text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Start Free
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button
+              @click="isOpen = !isOpen"
+              class="text-gray-600 w-10 h-10 relative focus:outline-none"
+            >
+              <div
+                class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+              >
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'rotate-45': isOpen, ' -translate-y-1.5': !isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'opacity-0': isOpen }"
+                ></span>
+                <span
+                  class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out"
+                  :class="{'-rotate-45': isOpen, ' translate-y-1.5': !isOpen}"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div
+          class="md:hidden fixed inset-x-0 top-[72px] bg-white/95 backdrop-blur-lg border-b border-gray-100 shadow-lg"
+          x-show="isOpen"
+          @click.away="isOpen = false"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-4"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-4"
+        >
+          <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-col space-y-3">
+              <a
+                href="./#features"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Features</a
+              >
+              <a
+                href="./#how-it-works"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >How it Works</a
+              >
+              <a
+                href="./#pricing"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Pricing</a
+              >
+              <a
+                href="./#integrations"
+                class="px-4 py-2 text-gray-600 hover:text-primary-500 rounded-lg hover:bg-primary-50 transition-colors"
+                >Integrations</a
+              >
+              <a
+            href="http://app.leadcourt.com/"
+              
+                class="w-full gradient-bg text-white px-4 py-3 rounded-lg font-medium hover:opacity-90 transition-all hover:shadow-lg flex items-center justify-center space-x-2"
+              >
+                <span>Start Free</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    
+
+    <!-- Hero Section -->
+    <section
+      class="pt-20 md:pt-32 pb-20 px-4 sm:px-6 lg:px-8 min-h-[90vh] md:min-h-screen relative overflow-hidden bg-gradient-to-br from-primary-500/5 via-white to-primary-500/5"
+    >
+      <!-- Decorative Elements -->
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,107,107,0.1),rgba(255,255,255,0)_50%)]"
+      ></div>
+      <div
+        class="absolute inset-0"
+        style="
+          background-image: radial-gradient(
+            circle at 1px 1px,
+            rgba(255, 107, 107, 0.05) 1px,
+            transparent 0
+          );
+          background-size: 40px 40px;
+        "
+      ></div>
+
+      <!-- Floating Elements -->
+      <div
+        class="absolute top-1/4 -left-32 w-96 h-96 bg-gradient-to-br from-primary-500/20 to-transparent rounded-full filter blur-3xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-1/4 -right-32 w-96 h-96 bg-gradient-to-bl from-primary-500/20 to-transparent rounded-full filter blur-3xl animate-pulse"
+      ></div>
+
+      <!-- Animated Dots -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute w-2 h-2 bg-primary-500/30 rounded-full top-1/4 left-1/4 animate-float"
+        ></div>
+        <div
+          class="absolute w-3 h-3 bg-primary-500/20 rounded-full top-3/4 left-1/3 animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute w-2 h-2 bg-primary-500/30 rounded-full top-1/3 right-1/4 animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="container mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center relative">
+          <!-- Mobile-only decorative element -->
+          <div
+            class="absolute -top-20 left-1/2 transform -translate-x-1/2 w-full max-w-lg h-64 bg-gradient-to-b from-primary-500/10 to-transparent rounded-full blur-3xl lg:hidden"
+          ></div>
+          <div class="text-left relative z-10">
+            <div class="space-y-8">
+              <div
+                class="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20"
+                data-aos="fade-down"
+              >
+                <span class="text-primary-500 font-semibold tracking-wide"
+                  >B2B LEAD INTELLIGENCE PLATFORM</span
+                >
+                <div
+                  class="w-2 h-2 rounded-full bg-primary-500 ml-3 animate-pulse"
+                ></div>
+              </div>
+              <h1
+                class="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight"
+                data-aos="fade-up"
+              >
+                Access <span class="gradient-text">140M+</span><br />
+                Verified B2B<br />
+                Contacts<br />
+                <span class="text-primary-500">Instantly</span>
+              </h1>
+              <p
+                class="text-lg sm:text-xl text-gray-600 max-w-xl"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                The fastest way to filter, find, and export leads that convert.
+              </p>
+            </div>
+            <div
+              class="flex flex-col sm:flex-row gap-4 mb-8 w-full sm:w-auto"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <a
+            href="http://app.leadcourt.com/"
+
+                class="w-full sm:w-auto gradient-bg text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+              >
+                Start Free Trial
+              </a>
+              <a
+            href="#pricing"
+
+                class="w-full sm:w-auto bg-white text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium text-base sm:text-lg hover:bg-gray-50 transition-all shadow-sm"
+              >
+                View Pricing
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative z-10 lg:block hidden"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <!-- Decorative Elements -->
+            <div
+              class="absolute -top-8 -right-8 w-64 h-64 bg-gradient-to-br from-primary-500/10 to-primary-500/5 rounded-full blur-3xl"
+            ></div>
+            <div
+              class="absolute -bottom-8 -left-8 w-64 h-64 bg-gradient-to-tr from-primary-500/10 to-primary-500/5 rounded-full blur-3xl"
+            ></div>
+
+            <div
+              class="glass-effect rounded-2xl shadow-2xl overflow-hidden relative"
+            >
+              <div
+                class="bg-white/90 backdrop-blur-sm p-4 border-b border-gray-100 flex justify-between items-center"
+              >
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Dashboard Preview
+                </h3>
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+              </div>
+              <div class="p-6 bg-white/50 backdrop-blur-sm">
+                <div class="mb-6">
+                  <div class="flex justify-between items-center mb-4">
+                    <div
+                      class="grid grid-cols-4 w-full gap-4 text-sm font-medium text-gray-500"
+                    >
+                      <div>Name</div>
+                      <div>Role</div>
+                      <div>Company</div>
+                      <div>Email Status</div>
+                    </div>
+                  </div>
+                  <div class="space-y-4">
+                    <div
+                      class="grid grid-cols-4 gap-4 items-center bg-white/90 backdrop-blur-sm p-3 rounded-lg hover:bg-white transition-colors hover:shadow-sm"
+                    >
+                      <div class="font-medium">Jane Doe</div>
+                      <div class="text-gray-600">Marketing Manager</div>
+                      <div class="text-gray-600">Acme Corp</div>
+                      <div>
+                        <span class="text-green-500 flex items-center"
+                          ><i class="fas fa-check-circle mr-1"></i>
+                          Verified</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-4 gap-4 items-center bg-white/90 backdrop-blur-sm p-3 rounded-lg hover:bg-white transition-colors hover:shadow-sm"
+                    >
+                      <div class="font-medium">John Smith</div>
+                      <div class="text-gray-600">Sales Director</div>
+                      <div class="text-gray-600">Beta LLC</div>
+                      <div>
+                        <span class="text-green-500 flex items-center"
+                          ><i class="fas fa-check-circle mr-1"></i>
+                          Verified</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="grid grid-cols-4 gap-4 items-center bg-white/90 backdrop-blur-sm p-3 rounded-lg hover:bg-white transition-colors hover:shadow-sm"
+                    >
+                      <div class="font-medium">Alice Johnson</div>
+                      <div class="text-gray-600">Founder</div>
+                      <div class="text-gray-600">Gamma Inc</div>
+                      <div>
+                        <span class="text-yellow-500 flex items-center"
+                          ><i class="fas fa-clock mr-1"></i> Pending</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-center mt-6 pt-6 border-t border-gray-100"
+                >
+                  <div class="flex items-center text-sm text-gray-500">
+                    <span class="flex items-center mr-4">
+                      <i class="fas fa-history mr-1"></i>
+                      Updated 2m ago
+                    </span>
+                    <span class="flex items-center">
+                      <i class="fas fa-check-circle text-green-500 mr-1"></i>
+                      95% Accuracy
+                    </span>
+                  </div>
+                  <button
+                    class="gradient-bg text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all hover:shadow-lg hover:scale-105"
+                  >
+                    <i class="fas fa-file-export mr-2"></i>
+                    Export Contacts
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats & Trust Badges -->
+        <div
+          class="mt-16 sm:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12"
+        >
+          <!-- Stats -->
+          <div
+            class="glass-effect rounded-2xl p-4 md:p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            data-aos="fade-up"
+          >
+            <div class="grid grid-cols-2 gap-4 sm:gap-8">
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2 gradient-text">140M+</div>
+                <p class="text-gray-600">Verified Contacts</p>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2 gradient-text">95%</div>
+                <p class="text-gray-600">Email Accuracy</p>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2 gradient-text">50K+</div>
+                <p class="text-gray-600">Happy Customers</p>
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold mb-2 gradient-text">24/7</div>
+                <p class="text-gray-600">Live Support</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Badges -->
+          <div
+            class="glass-effect rounded-2xl p-4 md:p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3
+              class="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-center"
+            >
+              Trusted By Industry Leaders
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div
+                class="flex items-center p-3 sm:p-4 bg-white/50 rounded-xl hover:bg-white/70 transition-colors duration-300 group"
+              >
+                <i
+                  class="fas fa-shield-alt text-2xl sm:text-3xl text-primary-500 group-hover:scale-110 transition-transform duration-300"
+                ></i>
+                <div class="ml-3 sm:ml-4">
+                  <h4 class="font-semibold text-sm sm:text-base">
+                    GDPR Compliant
+                  </h4>
+                  <p class="text-xs sm:text-sm text-gray-600">
+                    Data privacy assured
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center p-3 sm:p-4 bg-white/50 rounded-xl hover:bg-white/70 transition-colors duration-300 group"
+              >
+                <i
+                  class="fas fa-sync text-2xl sm:text-3xl text-primary-500 group-hover:scale-110 transition-transform duration-300"
+                ></i>
+                <div class="ml-3 sm:ml-4">
+                  <h4 class="font-semibold text-sm sm:text-base">
+                    Daily Updates
+                  </h4>
+                  <p class="text-xs sm:text-sm text-gray-600">
+                    Fresh data always
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center p-3 sm:p-4 bg-white/50 rounded-xl hover:bg-white/70 transition-colors duration-300 group"
+              >
+                <i
+                  class="fas fa-check-circle text-2xl sm:text-3xl text-primary-500 group-hover:scale-110 transition-transform duration-300"
+                ></i>
+                <div class="ml-3 sm:ml-4">
+                  <h4 class="font-semibold text-sm sm:text-base">
+                    Verified Data
+                  </h4>
+                  <p class="text-xs sm:text-sm text-gray-600">
+                    95% accuracy rate
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center p-3 sm:p-4 bg-white/50 rounded-xl hover:bg-white/70 transition-colors duration-300 group"
+              >
+                <i
+                  class="fas fa-lock text-2xl sm:text-3xl text-primary-500 group-hover:scale-110 transition-transform duration-300"
+                ></i>
+                <div class="ml-3 sm:ml-4">
+                  <h4 class="font-semibold text-sm sm:text-base">
+                    SOC 2 Certified
+                  </h4>
+                  <p class="text-xs sm:text-sm text-gray-600">
+                    Enterprise ready
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16"
+          data-aos="fade-up"
+        >
+          How LeadCourt Works
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Step 1 -->
+          <div class="shadow hover:shadow-xl rounded-2xl text-center p-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-filter text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Filter</h3>
+            <p class="text-gray-600">
+              Use advanced filters to find your ideal prospects by role,
+              company, location, and more.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="shadow hover:shadow-xl rounded-2xl text-center p-6" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-search text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Reveal</h3>
+            <p class="text-gray-600">
+              Instantly access verified contact information including email
+              addresses and phone numbers.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="shadow hover:shadow-xl rounded-2xl text-center p-6" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-file-export text-3xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-4">Export</h3>
+            <p class="text-gray-600">
+              Export leads to CSV or directly to your favorite CRM with one
+              click.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-20">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6"
+            data-aos="fade-up"
+          >
+            <span class="text-primary-500 font-semibold"
+              >POWERFUL FEATURES</span
+            >
+            <div
+              class="w-2 h-2 rounded-full bg-primary-500 ml-3 animate-pulse"
+            ></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+            Powerful Features for
+            <span class="text-primary-500">Lead Generation</span>
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Everything you need to find and connect with your ideal prospects
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-database text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">140M+ Contacts</h3>
+            <p class="text-gray-600">
+              Access our vast database of verified business professionals
+              updated daily.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-filter text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">Advanced Filters</h3>
+            <p class="text-gray-600">
+              Find exactly who you're looking for with precise targeting
+              options.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-check-circle text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">Verified Emails</h3>
+            <p class="text-gray-600">
+              Every email is verified in real-time for maximum deliverability.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-sync text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">Regular Updates</h3>
+            <p class="text-gray-600">
+              Database refreshed daily with new contacts and removed outdated
+              ones.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-plug text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">CRM Integration</h3>
+            <p class="text-gray-600">
+              Seamlessly connect with your favorite CRM and email tools.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div
+            class="p-6 glass-effect  shadow shadow-gray-100 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fas fa-file-csv text-4xl text-primary-500 mb-4 transform transition-transform group-hover:scale-110"
+            ></i>
+            <h3 class="text-xl font-semibold mb-3">CSV Export</h3>
+            <p class="text-gray-600">
+              Export your leads in CSV format with just one click.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Demo Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-500/5 via-white to-primary-500/5"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6"
+            data-aos="fade-up"
+          >
+            <span class="text-primary-500 font-semibold">PRODUCT DEMO</span>
+            <div
+              class="w-2 h-2 rounded-full bg-primary-500 ml-3 animate-pulse"
+            ></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+            See LeadCourt in <span class="text-primary-500">Action</span>
+          </h2>
+          <p class="text-gray-600 text-lg mb-8">
+            Watch how easy it is to find and export verified business contacts
+          </p>
+
+          <!-- Video Container -->
+          <div
+            class="relative aspect-video rounded-2xl overflow-hidden shadow-2xl"
+            data-aos="fade-up"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-primary-500/5"
+            ></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button
+                class="w-20 h-20 bg-white rounded-full shadow-lg flex items-center justify-center group hover:scale-110 transition-transform duration-300"
+              >
+                <i
+                  class="fas fa-play text-primary-500 text-2xl group-hover:text-primary-600"
+                ></i>
+              </button>
+            </div>
+            <img
+              src="https://placehold.co/1920x1080"
+              alt="Product Demo Thumbnail"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Database Preview Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-primary-500/5 via-white to-primary-500/5"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div
+            class="inline-flex items-center px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6"
+            data-aos="fade-up"
+          >
+            <span class="text-primary-500 font-semibold">LIVE DATABASE</span>
+            <div
+              class="w-2 h-2 rounded-full bg-primary-500 ml-3 animate-pulse"
+            ></div>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-up">
+            Preview Our <span class="text-primary-500">Database</span>
+          </h2>
+          <p class="text-gray-600 text-lg mb-8">
+            Access millions of verified business contacts in real-time
+          </p>
+        </div>
+        <div
+          class="max-w-6xl mx-auto glass-effect rounded-2xl shadow-2xl overflow-hidden"
+          data-aos="fade-up"
+        >
+          <!-- Search Bar -->
+          <div class="p-6 border-b border-gray-100 bg-white/80">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div class="flex-1 relative">
+                <i
+                  class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Search by name, company, or title..."
+                  class="w-full pl-12 pr-4 py-3 bg-white/80 border border-gray-200 rounded-xl focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all"
+                />
+              </div>
+              <button
+                class="gradient-bg text-white px-6 py-3 rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+              >
+                <span>Search</span>
+                <i class="fas fa-arrow-right text-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Sample Data Table -->
+          <div class="overflow-x-auto py-5 m-auto w-full">
+            <table class="p-6 space-y-4 w-[150vw] md:w-[100%] text-center">
+              <!-- Table Header -->
+              <tr
+                class="w-[150vw] md:w-[100%] py-3 grid grid-cols-5 gap-4  bg-gray-50/50 rounded-lg text-sm font-medium text-gray-500 uppercase tracking-wider"
+              >
+                <th class="">Name</th>
+                <th class="">Title</th>
+                <th class="">Company</th>
+                <th class="">Location</th>
+                <th class="">Action</th>
+              </tr>
+
+              <!-- Table Rows -->
+              <tbody class=" w-[150vw] md:w-[100%] space-y-5"> 
+                <!-- Row 1 -->
+                <tr
+                  class="grid grid-cols-5 gap-4 px-4 py-3 bg-white/80 rounded-xl hover:bg-white hover:shadow-md transition-all items-center"
+                >
+                  <td class="font-medium">John Smith</td>
+                  <td class="text-gray-600">VP of Sales</td>
+                  <td class="text-gray-600">Tech Corp</td>
+                  <td class="text-gray-600">San Francisco, CA</td>
+                  <td>
+                    <button
+                      class="px-4 py-2 text-primary-500 hover:bg-primary-50 rounded-lg transition-colors inline-flex items-center space-x-2"
+                    >
+                      <i class="fas fa-eye"></i>
+                      <span>Reveal</span>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr
+                  class="grid grid-cols-5 gap-4 px-4 py-3 bg-white/80 rounded-xl hover:bg-white hover:shadow-md transition-all items-center"
+                >
+                  <td class="font-medium">Sarah Johnson</td>
+                  <td class="text-gray-600">Marketing Director</td>
+                  <td class="text-gray-600">Growth Inc</td>
+                  <td class="text-gray-600">New York, NY</td>
+                  <td>
+                    <button
+                      class="px-4 py-2 text-primary-500 hover:bg-primary-50 rounded-lg transition-colors inline-flex items-center space-x-2"
+                    >
+                      <i class="fas fa-eye"></i>
+                      <span>Reveal</span>
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr
+                  class="grid grid-cols-5 gap-4 px-4 py-3 bg-white/80 rounded-xl hover:bg-white hover:shadow-md transition-all items-center"
+                >
+                  <td class="font-medium">Michael Chen</td>
+                  <td class="text-gray-600">CTO</td>
+                  <td class="text-gray-600">Innovation Labs</td>
+                  <td class="text-gray-600">Austin, TX</td>
+                  <td>
+                    <button
+                      class="px-4 py-2 text-primary-500 hover:bg-primary-50 rounded-lg transition-colors inline-flex items-center space-x-2"
+                    >
+                      <i class="fas fa-eye"></i>
+                      <span>Reveal</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section
+      id="pricing"
+      class="py-20"
+      x-data="{ 
+        isAnnual: false,
+        selectedPlan: null,
+        additionalCredits: 0,
+        baseCredits: {
+            'free': 500,
+            'starter': 3000,
+            'pro': 10000,
+            'business': 15000
+        },
+        getTotal() {
+            if (!this.selectedPlan) return 0;
+            return this.baseCredits[this.selectedPlan] + (this.additionalCredits * 1000);
+        }
+    }"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-6"
+          data-aos="fade-up"
+        >
+          Simple, Credit-Based Pricing
+        </h2>
+        <p
+          class="text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto"
+          data-aos="fade-up"
+        >
+          Choose the plan that's right for you. All plans include full access to
+          our database.
+        </p>
+
+        <!-- Pricing Toggle -->
+        <div class="flex justify-center items-center mb-12" data-aos="fade-up">
+          <span :class="{'text-gray-900': !isAnnual, 'text-gray-500': isAnnual}"
+            >Monthly</span
+          >
+          <button
+            class="mx-4 relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none"
+            :class="isAnnual ? 'bg-primary-500' : 'bg-gray-200'"
+            @click="isAnnual = !isAnnual"
+          >
+            <span
+              class="inline-block w-4 h-4 transform transition-transform bg-white rounded-full"
+              :class="isAnnual ? 'translate-x-6' : 'translate-x-1'"
+            ></span>
+          </button>
+          <span
+            :class="{'text-gray-500': !isAnnual, 'text-gray-900': isAnnual}"
+          >
+            Annual <span class="text-primary-500">(Save 20%)</span>
+          </span>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-12">
+        <!-- <div class="grid grid-cols-4 gap-5 border p-5"> -->
+          <!-- Free Plan -->
+          <div
+            class="gradient-border shadow-xs rounded-xl transform transition-all duration-300 hover:-translate-y-2 group"
+            data-aos="fade-up"
+          >
+            <div
+              class="p-6 md:p-8 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+              :class="{'bg-gradient-to-r from-primary-50 to-primary-100': selectedPlan === 'free'}"
+              @click="selectedPlan = 'free'"
+            >
+              <!-- Decorative background -->
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <!-- Content -->
+              <div class="relative z-10">
+                <h3 class="text-2xl font-bold mb-4">Free</h3>
+                <div class="text-4xl font-bold mb-6">
+                  ₹0</span>
+                </div>
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-primary-500 mr-2"></i>
+                    500 credits
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-primary-500 mr-2"></i>
+                    Basic filters
+                  </li>
+                  <li class="flex items-center">
+                    <i class="fas fa-check text-primary-500 mr-2"></i>
+                    CSV export
+                  </li>
+                </ul>
+                <a
+                    href="http://app.leadcourt.com/subscription"
+                  class="w-full py-3 px-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center group"
+                >
+                  <span>Start for free</span>
+                  <i
+                    class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+              </div>
+            </div>
+            </div>
+
+            <!-- Starter Plan -->
+            <div
+              class="gradient-border transform transition-all duration-300 hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="p-6 md:p-8 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                :class="{'bg-gradient-to-r from-primary-50 to-primary-100': selectedPlan === 'starter'}"
+                @click="selectedPlan = 'starter'"
+              >
+                <!-- Decorative background -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <!-- Content -->
+                <div class="relative h-full z-10">
+                  <h3 class="text-2xl font-bold mb-4">Starter</h3>
+                  <div class="text-4xl font-bold mb-6">
+                    <span x-text="isAnnual ? '₹1376' : '₹1720'"></span>
+                    <span class="text-lg text-gray-500">/mo</span>
+                  </div>
+                  <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      All Free Features
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      3,000 credits
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      Advanced filters
+                    </li>
+                  </ul>
+                  <a
+                    href="http://app.leadcourt.com/subscription"
+                    class="w-full py-3 px-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center group"
+                  >
+                    <span>Get Started</span>
+                    <i
+                      class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pro Plan -->
+            <div
+              class="gradient-border transform transition-all duration-300 hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="p-6 md:p-8 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                :class="{'bg-gradient-to-r from-primary-50 to-primary-100': selectedPlan === 'pro'}"
+                @click="selectedPlan = 'pro'"
+              >
+                <!-- Decorative background -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <!-- Content -->
+                <div class="relative z-10">
+                  <h3 class="text-2xl font-bold mb-4">Pro</h3>
+                  <div class="text-4xl font-bold mb-6">
+                    <span x-text="isAnnual ? '₹4129' : '₹5161'"></span>
+                    
+<!--                     <span x-text="isAnnual ? '$48' : '$60'"></span> -->
+                    <span class="text-lg text-gray-500">/mo</span>
+                  </div>
+                  <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      All Starter Features
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      10,000 credits
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      Team collaboration
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      CRM integration
+                    </li>
+                  </ul>
+                  <a
+                    href="http://app.leadcourt.com/subscription"
+                    class="w-full py-3 px-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center group"
+                  >
+                    <span>Get Started</span>
+                    <i
+                      class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Plan -->
+            <div
+              class="gradient-border transform transition-all duration-300 hover:-translate-y-2 group"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="p-6 md:p-8 hover:shadow-lg transition-all duration-300 relative overflow-hidden"
+                :class="{'bg-gradient-to-r from-primary-50 to-primary-100': selectedPlan === 'business'}"
+                @click="selectedPlan = 'business'"
+              >
+                <!-- Decorative background -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                ></div>
+                <!-- Content -->
+                <div class="relative z-10">
+                  <h3 class="text-2xl font-bold mb-4">Business</h3>
+                  <div class="text-4xl font-bold mb-6">
+                    <span x-text="isAnnual ? '₹6882' : '₹8602'"></span>
+<!--                     <span x-text="isAnnual ? '$80' : '$100'"></span> -->
+                    <span class="text-lg text-gray-500">/mo</span>
+                  </div>
+                  <ul class="space-y-4 mb-8">
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      All Pro Features
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      15,000 credits
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      Dedicated support
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      Custom integration
+                    </li>
+                    <li class="flex items-center">
+                      <i class="fas fa-check text-primary-500 mr-2"></i>
+                      API access
+                    </li>
+                  </ul>
+                  <a
+                    href="http://app.leadcourt.com/subscription"
+                    class="w-full py-3 px-4 gradient-bg text-white rounded-lg hover:opacity-90 transition-all duration-300 hover:shadow-lg transform hover:scale-105 flex items-center justify-center group"
+                  >
+                    <span>Get Started</span>
+                    <i
+                      class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add-on Credits -->
+        <div class="p-5">
+
+          <div
+            class="max-w-3xl mx-auto glass-effect rounded-xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300"
+            data-aos="fade-up"
+          >
+            <h3 class="text-xl font-bold mb-6">Need more credits?</h3>
+            <div class="mb-6 relative">
+              <div
+                class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-sm text-gray-500"
+              >
+                Drag to add more credits
+              </div>
+              <input
+                type="range"
+                x-model="additionalCredits"
+                min="0"
+                max="10"
+                step="1"
+                class="w-full h-2 bg-gradient-to-r from-primary-200 to-primary-500 rounded-lg appearance-none cursor-pointer"
+              />
+            </div>
+            <div class="flex justify-between items-center">
+              <div>
+                <span class="text-2xl font-bold"
+                  >₹<span x-text="additionalCredits * 860"></span
+                ></span>
+                <span class="text-gray-500"> = </span>
+                <span class="text-xl font-bold"
+                  ><span x-text="additionalCredits * 1000"></span> additional
+                  credits</span
+                >
+              </div>
+              <div class="text-white py-2 px-5 gradient-bg rounded-lg ">
+                Click to buy
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+    </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50" x-data="{ active: null }">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16"
+          data-aos="fade-up"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 1 ? null : 1"
+            >
+              <span class="font-medium">What are credits and how do they work?</span>
+              <i
+                class="fas"
+                :class="active === 1 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 1" x-collapse>
+              <p class="text-gray-600">
+                Credits are the currency used in our platform to access contact details. You can purchase credits, and each time you view certain types of data, credits are deducted from your balance.
+              </p> 
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 2 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 2 ? null : 2"
+            >
+              <span class="font-medium">How many credits does it cost to view a lead's contact information?</span>
+              <i
+                class="fas"
+                :class="active === 2 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 2" x-collapse>
+              <p class="text-gray-600">
+                Viewing an email address costs 1 credit
+              </p>
+              <p class="text-gray-600">
+                Viewing a phone number costs 5 credits
+              </p>
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 3 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 3 ? null : 3"
+            >
+              <span class="font-medium">If I view the same contact again, will I be charged credits again?</span>
+              <i
+                class="fas"
+                :class="active === 3 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 3" x-collapse>
+              <p class="text-gray-600">
+                No. Once you’ve unlocked a lead’s email or phone number, it’s yours permanently — you won’t be charged again for the same data.
+              </p>
+ 
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 4 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 4 ? null : 4"
+            >
+              <span class="font-medium">What happens if I don’t have enough credits?</span>
+              <i
+                class="fas"
+                :class="active === 4 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 4" x-collapse>
+              <p class="text-gray-600">
+                If you try to unlock data but don’t have enough credits, the system will stop the request and notify you. You’ll need to buy a subscription or top up your credits to continue.
+              </p>
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 5 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 5 ? null : 5"
+            >
+              <span class="font-medium">Can I export the leads I have collected?</span>
+              <i
+                class="fas"
+                :class="active === 5 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 5" x-collapse>
+              <p class="text-gray-600">
+                Yes. You can create lists of leads and export them as CSV. However, only the contact information you’ve already redeemed (paid credits for) will be included in the exported file.
+              </p>
+ 
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 6 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 6 ? null : 6"
+            >
+              <span class="font-medium">Is my data access secure and private?</span>
+              <i
+                class="fas"
+                :class="active === 6 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 6" x-collapse>
+              <p class="text-gray-600">
+                Yes. All data redemptions and exports are processed through secure backend APIs. No sensitive contact information is stored or exposed in the frontend without proper authentication and authorization.
+              </p>
+ 
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 7 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 7 ? null : 7"
+            >
+              <span class="font-medium">Can I get a refund for unused credits?</span>
+              <i
+                class="fas"
+                :class="active === 7 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 7" x-collapse>
+              <p class="text-gray-600">
+                We currently do not offer refunds for unused credits. However, if you experience any issues with redemptions or feel you've been charged incorrectly, please contact our support team and we’ll review it promptly.
+              </p>
+ 
+            </div>
+          </div>
+ 
+          <!-- FAQ Item 8 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 8 ? null : 8"
+            >
+              <span class="font-medium">How accurate is your data?</span>
+              <i
+                class="fas"
+                :class="active === 8 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 8" x-collapse>
+              <p class="text-gray-600">
+                Our data is maintained at 95%+ accuracy through regular updates
+                and verification processes. We use multiple data sources and
+                AI-powered verification to ensure the highest quality.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 9 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 9 ? null : 9"
+            >
+              <span class="font-medium"
+                >What happens when I run out of credits?</span
+              >
+              <i
+                class="fas"
+                :class="active === 9 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 9" x-collapse>
+              <p class="text-gray-600">
+                You can purchase additional credits at any time or upgrade your
+                plan for more monthly credits. Unused credits roll over to the
+                next month on paid plans.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 10 -->
+          <div class="border border-gray-200 rounded-lg" data-aos="fade-up">
+            <button
+              class="w-full flex justify-between items-center p-4 focus:outline-none"
+              @click="active = active === 10 ? null : 10"
+            >
+              <span class="font-medium">Is the data GDPR compliant?</span>
+              <i
+                class="fas"
+                :class="active === 10 ? 'fa-chevron-up' : 'fa-chevron-down'"
+              ></i>
+            </button>
+            <div class="p-4 bg-white" x-show="active === 10" x-collapse>
+              <p class="text-gray-600">
+                Yes, we are fully GDPR compliant and maintain strict data
+                privacy standards. We only collect publicly available business
+                information and provide easy opt-out options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16"
+          data-aos="fade-up"
+        >
+          Seamless Integrations
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+          <!-- Integration logos -->
+          <div
+            class="flex items-center justify-center p-6 glass-effect rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fab fa-salesforce text-5xl text-gray-400 transition-colors hover:text-primary-500"
+            ></i>
+          </div>
+          <div
+            class="flex items-center justify-center p-6 glass-effect rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fab fa-hubspot text-5xl text-gray-400 transition-colors hover:text-primary-500"
+            ></i>
+          </div>
+          <div
+            class="flex items-center justify-center p-6 glass-effect rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <i
+              class="fab fa-slack text-5xl text-gray-400 transition-colors hover:text-primary-500"
+            ></i>
+          </div>
+          <div
+            class="flex items-center justify-center p-6 glass-effect rounded-xl hover-scale"
+            data-aos="fade-up"
+          > 
+          <img src="./zoho_logo.png" class="opacity-[.3]" alt="">
+            <i
+              class="fab fa-zapier text-5xl text-gray-400 transition-colors hover:text-primary-500"
+            ></i>
+          </div>
+        </div>
+        <p class="text-center text-gray-600 mb-8" data-aos="fade-up">
+          And many more integrations available through our API
+        </p>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16"
+          data-aos="fade-up"
+        >
+          What Our Customers Say
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="glass-effect p-8 rounded-xl hover-scale"
+            data-aos="fade-up"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-semibold">Robert Wilson</h4>
+                <p class="text-gray-600">Sales Director, TechCorp</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "LeadCourt has transformed our lead generation process. We've seen
+              a 3x increase in qualified leads and our sales team loves the
+              accuracy of the data."
+            </p>
+            <div class="flex text-primary-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-semibold">Sarah Chen</h4>
+                <p class="text-gray-600">Growth Manager, StartupX</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "The quality of contacts and the ease of use is unmatched. We've
+              been able to scale our outreach efforts significantly with
+              LeadCourt."
+            </p>
+            <div class="flex text-primary-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-lg"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/men/67.jpg"
+                alt="Customer"
+                class="w-12 h-12 rounded-full"
+              />
+              <div class="ml-4">
+                <h4 class="font-semibold">Michael Brown</h4>
+                <p class="text-gray-600">CEO, MarketPro</p>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+              "LeadCourt's database is constantly updated and the support team
+              is incredibly responsive. Best investment we've made for our sales
+              team."
+            </p>
+            <div class="flex text-primary-500">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">
+          Ready to Supercharge Your Lead Generation?
+        </h2>
+        <p
+          class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
+          data-aos="fade-up"
+        >
+          Join thousands of sales teams and marketers who are scaling their
+          outreach with LeadCourt.
+        </p>
+        <a
+        href="http://app.leadcourt.com/"
+
+          class="gradient-bg text-white px-8 py-4 rounded-full font-medium text-lg hover:opacity-90 transition-opacity"
+          data-aos="fade-up"
+        >
+          Start Your Free Trial
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 py-12">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">LeadCourt</h3>
+            <p class="text-gray-600">
+              Next-gen lead intelligence platform for modern sales teams.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Product</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li>
+                <a href="#features" class="hover:text-primary-500">Features</a>
+              </li>
+              <li>
+                <a href="#pricing" class="hover:text-primary-500">Pricing</a>
+              </li>
+              <li>
+                <a href="#integrations" class="hover:text-primary-500"
+                  >Integrations</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Company</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="#" class="hover:text-primary-500">About</a></li>
+              <li><a href="https://blog.leadcourt.com" class="hover:text-primary-500">Blog</a></li>
+              <li><a href="#" class="hover:text-primary-500">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Legal</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="./privacyandpolicy.html" class="hover:text-primary-500">Privacy and Policy</a></li>
+              <li><a href="./termsandcondition.html" class="hover:text-primary-500">Terms and Conditions</a></li>
+              <li><a href="./refundpolicy.html" class="hover:text-primary-500">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-200 mt-12 pt-8 text-center text-gray-600"
+        >
+          <p>&copy; 2024 LeadCourt. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/aos.js"></script>
+  </body>
+</html>
